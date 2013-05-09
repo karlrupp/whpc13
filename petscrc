@@ -1,2 +1,17 @@
+## Print help on available options
 #-help
 
+## Print information on the number of nonlinear and linear solver iterations
+#-snes_monitor -ksp_monitor
+
+## View nonlinear and linear solver objects
+#-snes_view -ksp_view
+
+## Customize number of grid points in x and y direction (separate lines)
+-da_grid_x 40 
+-da_grid_y 40
+
+## Physical parameters
+-p       2.0
+-lambda  5.0
+-epsilon 1e-5
