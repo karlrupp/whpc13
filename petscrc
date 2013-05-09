@@ -1,2 +1,33 @@
+## Print help on available options
 #-help
+
+## Print information on the number of nonlinear and linear solver iterations
+#-snes_monitor -ksp_monitor
+
+## View nonlinear and linear solver objects
+#-snes_view -ksp_view
+
+## Customize number of grid points in x and y direction (separate lines)
+-da_grid_x 160 
+-da_grid_y 160
+
+## Physical parameters
+-p       2.1
+-lambda  3.0
+-epsilon 1e-5
+-myJ
+
+
+
+#
+## Play with the following parameters (run with -help to get an idea)
+#
+
+# Number of threads (up to 4) for salloc/sbatch (edit submit_job.sh as required)
+
+# -jtype   4     # 1: only Laplace operator, 2: with \eta, 3: Jacobi matrix with star stencil, 4: Full Jacobi matrix
+# -vec_type      # Vector type: use 'cusp' for GPU
+# -mat_type      # Matrix type: use 'aijcusp' for GPU
+# -ksp_type      # Linear solver. Experiment :-)
+# -pc_type       # Preconditioner. use 'sacusp' for GPU, or use 'gamg', 'ml', 'hypre' for multigrid on CPU. Other preconditioners may be faster, so don't ignore them
 
