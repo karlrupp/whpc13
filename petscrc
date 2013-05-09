@@ -1,2 +1,27 @@
+## Print help on available options
 #-help
+
+## Print information on the number of nonlinear and linear solver iterations
+#-snes_monitor -ksp_monitor
+
+## View nonlinear and linear solver objects
+#-snes_view -ksp_view
+
+## Customize number of grid points in x and y direction (separate lines)
+-da_grid_x 160 
+-da_grid_y 160
+
+## Physical parameters
+-p       2.1
+-lambda  3.0
+-epsilon 1e-5
+
+## Parameters for Jacobian
+#-jtype   1  # Only u'' + e^u
+#-jtype   2  # \nabla( \eta \nabla u ) + e^u
+#-myJ        # Enable this to use 'our' Jacobian
+
+## Parameters for 'automatic' Jacobian (-myJ must NOT be defined)
+#-snes_mf     # Matrix-Free Scheme
+#-snes_fd     # 
 
